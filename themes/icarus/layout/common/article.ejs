@@ -1,0 +1,103 @@
+<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        <% if (post.banner) { %>
+            <%- partial('post/banner') %>
+        <% } %>
+        <%- partial('post/gallery') %>
+        <% if (post.link || post.title) { %>
+            <header class="article-header">
+                <%- partial('post/title', { class_name: 'article-title' }) %>
+                <div class="article-meta">
+                    <%- partial('post/date', { class_name: 'article-date', date_format: null }) %>
+                    <%- partial('post/category') %>
+                    <%- partial('post/tag') %>
+                </div>
+            </header>
+        <% } %>
+        <div class="article-entry" itemprop="articleBody">
+        <% if (index && post.excerpt) { %>
+            <p><%- post.excerpt %></p>
+            <p class="article-more-link">
+                <a href="<%- url_for(post.path) %>#more"><%= __('article.more') %></a>
+            </p>
+        <% } else { %>
+            <% if (post.type === "tags"){ %>
+                
+            <div class="tags">
+                <%- tagcloud({
+                    min_font: 16, 
+                    max_font: 35, 
+                    amount: 999, 
+                    color: true, 
+                    start_color: 'gray', 
+                    end_color: 'black',
+                }) %>
+            </div>
+            <style>
+                .tags {
+                    max-width: 40em;
+                    margin: 2em auto;
+                    margin-top: 0em;
+                }
+                .tags a {
+                    margin-right: 1em;
+                    border-bottom: 1px solid gray;
+                    line-height: 65px;
+                    white-space: nowrap;
+                }
+                .tags a:hover {
+                    border-bottom: 2px solid black;
+                    font-style: italic;
+                    text-decoration: none;
+                }
+            </style>
+            <% } else if (post.type === "categories") { %>
+            <%- list_categories({
+                depth: 1,
+            }) %>
+            <style>
+                .category-list li{
+                    display: inline-block;
+                    margin: 0 1em .5em 0;
+                    padding: 4px;
+                    border: 1px solid lightgray;
+                    font-size: 1.2em;
+                }
+                .category-list a {
+                    color: gray;
+                }
+                .category-list-item:hover a {
+                    color: gray;
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+                .category-list-count {
+                    margin-left: 2px;
+                    font-size: .9em;
+                }
+               
+            </style>
+            <% } else { %>
+                <% if (!index) { %>
+                    <div id="toc" class="toc-article">
+                    <strong class="toc-title"><%= __('article.catalogue') %></strong>
+                        <%- toc(post.content) %>
+                    </div>
+                <% } %>
+            <% } %>
+            <%- post.content %>
+        <% } %>
+        </div>
+        <footer class="article-footer">
+            <%- partial('share/index', { post: post }) %>
+            <%- partial('comment/counter', { post: post }) %>
+        </footer>
+    </div>
+    <% if (!index) { %>
+        <%- partial('post/nav') %>
+    <% } %>
+</article>
+
+<% if (!index) { %>
+    <%- partial('comment/index') %>
+<% } %>
