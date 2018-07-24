@@ -19,10 +19,12 @@ tags: [树莓派, 自动避障, 小车]
 这是后来做的加了三路寻轨功能的视频，后面文章会继续介绍：
 <embed src="http://player.youku.com/player.php/sid/XMTI4Nzk0NjMyOA==/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
 
+看不到视频的可以点这个链接跳转到优酷看：[https://v.youku.com/v_show/id_XMTI4Nzk0NjMyOA==.html](https://v.youku.com/v_show/id_XMTI4Nzk0NjMyOA==.html)
+
 <!-- more -->
 
 ## 需要的材料
-===
+
 1. `树莓派小车底盘`，这个上淘宝一搜一大堆，我买的四驱的，有带亚克力两层车板。
 2. `三种杜邦线`，每一种买十条就可以了，我当时怕不够用，每一种都买了20条。
 3. `移动电源`，这个家里之前有一个飞毛腿的，要买双usb输出的。
@@ -34,7 +36,6 @@ tags: [树莓派, 自动避障, 小车]
 上面的花费下来，不计树莓派、USB无线网卡和移动电源，大概花了90元左右。
 
 ## 材料组装
-===
 
 ### 小车底盘
 材料到手之后，先组装车底盘，安装说明书把第一层组装好，马达连线见下图，线我是用杜邦线一分为二去接的。
@@ -53,7 +54,6 @@ tags: [树莓派, 自动避障, 小车]
 接模块的电源我使用usb线剪的，其中黑线是接地，红线接VCC。
 
 ## 遥控程序
-===
 
 遥控主要是通过树莓派的GPIO设置高低电平信号来控制小车前进、后退、左转、右转和停止，具体可以参考代码和下面GPIO的接口说明。值得注意的是，1对应的树莓派电路板背面焊锡为方形的针脚。
 
@@ -126,7 +126,7 @@ while True:
 
 
 ## 最后
-====
+
 完成效果图：
 
 ![image](/blogImages/car_02.jpg)
