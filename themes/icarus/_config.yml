@@ -15,10 +15,10 @@ customize:
         url: images/logo.png
     profile:
         enabled: true # Whether to show profile bar
-        avatar: blogImages/qrcode_for_mellong.jpg
+        avatar: https://avatars3.githubusercontent.com/u/1818296?s=460&v=4
         gravatar: # Gravatar email address, if you enable Gravatar, your avatar config will be overriden
         author: Mellong
-        author_title: '扫一扫二维码订阅我的微信公众号：mellong'
+        author_title: 'Mellong'
         location: 'Zhuhai, China'
         follow: http://github.com/MellongLau
     highlight: monokai
