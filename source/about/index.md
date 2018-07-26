@@ -11,6 +11,4 @@ iOS攻城狮，技术宅。
 
 在开源社区也有一些贡献，目前在github已有几个开源Xcode插件和iOS控件。
 
-对我有兴趣? 关注我的 微信公众号 `mellong`，或者用微信直接扫一扫下面二维码进行关注:
-
-![WeChat QRcode](http://www.devlong.com/blogImages/qrcode_for_mellong.jpg)
+联系我： echo MTIxMzgyNjQ3QHFxLmNvbQo= | base64 -D
