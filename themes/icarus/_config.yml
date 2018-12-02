@@ -18,12 +18,12 @@ customize:
         avatar: https://avatars3.githubusercontent.com/u/1818296?s=460&v=4
         gravatar: # Gravatar email address, if you enable Gravatar, your avatar config will be overriden
         author: Mellong
-        author_title: 'Mellong'
+        author_title: '简单就好'
         location: 'Zhuhai, China'
         follow: http://github.com/MellongLau
     highlight: monokai
     sidebar: right # sidebar position, options: left, right
-    thumbnail: true # enable posts thumbnail, options: true, false
+    thumbnail: false # enable posts thumbnail, options: true, false
     favicon: # path to favicon
     social_links:
         github: http://github.com/MellongLau
